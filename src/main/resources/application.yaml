@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: theme-service
+server:
+  port: 8080
