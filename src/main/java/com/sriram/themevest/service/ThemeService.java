@@ -39,4 +39,14 @@ public class ThemeService {
     public void deleteTheme(Long id) {
         themeRepository.deleteById(id);
     }
+
+    public Theme updateTheme(Long id, CreateThemeRequest request)
+    {
+        Theme existingTheme = themeRepository.findById(id)
+                .orElseThrow(() -> new ThemeNotFoundException(id));
+        existingTheme.setName(request.getName());
+        existingTheme.setDescription(request.getDescription());
+        existingTheme.setRiskLevel(request.getRiskLevel());
+        return  themeRepository.save(existingTheme);
+    }
 }

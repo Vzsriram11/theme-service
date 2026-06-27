@@ -32,6 +32,13 @@ public class ThemeController {
 
         return themeService.createTheme(request);
     }
+    @PutMapping("/{id}")
+    public Theme updateTheme(
+            @PathVariable Long id,
+            @Valid @RequestBody CreateThemeRequest request) {
+
+        return themeService.updateTheme(id, request);
+    }
 
     @DeleteMapping("/{id}")
     public void deleteTheme(@PathVariable Long id) {
