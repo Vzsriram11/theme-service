@@ -3,14 +3,17 @@ spring:
     name: theme-service
 
   datasource:
-    url: jdbc:h2:mem:themevest
-    driver-class-name: org.h2.Driver
-    username: sa
+    url: jdbc:postgresql://localhost:5432/themevest
+    username: keerthy
     password:
+#    url: jdbc:h2:mem:themevest
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
 
   h2:
     console:
-      enabled: true
+      enabled: false
 
   jpa:
     show-sql: true

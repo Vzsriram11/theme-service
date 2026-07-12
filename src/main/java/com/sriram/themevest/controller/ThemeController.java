@@ -2,6 +2,8 @@ package com.sriram.themevest.controller;
 
 import com.sriram.themevest.dto.CreateThemeRequest;
 import com.sriram.themevest.entity.Theme;
+import com.sriram.themevest.model.Post;
+import com.sriram.themevest.service.PostServiceClient;
 import com.sriram.themevest.service.ThemeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -14,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/themes")
 @RequiredArgsConstructor
+
+
 @Tag(
         name = "Theme API",
         description = "APIs for managing investment themes"
@@ -21,10 +25,15 @@ import java.util.List;
 public class ThemeController {
 
     private final ThemeService themeService;
+    private final PostServiceClient postService;
 
     @GetMapping
     @Operation(summary = "Retrieve all investment themes")
     public List<Theme> getAllThemes() {
+      /*  for (Post post : postService.getAllPosts()) {
+            System.out.println("post:" + post);
+        }*/
+
         return themeService.getAllThemes();
     }
 

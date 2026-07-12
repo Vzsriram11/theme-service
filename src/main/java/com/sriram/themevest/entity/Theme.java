@@ -20,5 +20,12 @@ public class Theme {
 
     private String description;
 
-    private String riskLevel;
+    public  enum RiskLevel
+    {
+        LOW,
+        MEDIUM,
+        HIGH
+    }
+    @Enumerated(EnumType.STRING)
+    private RiskLevel riskLevel;
 }
