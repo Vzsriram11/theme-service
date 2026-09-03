@@ -45,6 +45,7 @@ public class ThemeService {
 
     public Theme updateTheme(Long id, CreateThemeRequest request)
     {
+
         Theme existingTheme = themeRepository.findById(id)
                 .orElseThrow(() -> new ThemeNotFoundException(id));
         existingTheme.setName(request.getName());
