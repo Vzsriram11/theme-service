@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class PostServiceClient {
@@ -61,5 +62,7 @@ public class PostServiceClient {
                 .retrieve()
                 .toBodilessEntity(); // Executes request discarding body response
     }
+
+
 }
 
