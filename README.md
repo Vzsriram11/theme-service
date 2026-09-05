@@ -28,3 +28,6 @@ Phase 1 Complete:
 * Spring Boot application setup
 * REST API implementation
 * GitHub repository setup
+
+Sep 4 update:
+JWT issuance, RSA signing and validation, role extraction, Bearer authentication, removal of HTTP Basic, and integration-test coverage.
